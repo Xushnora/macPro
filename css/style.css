@@ -1,0 +1,242 @@
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.parents {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.macBox {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.macImg {
+    width: 201px;
+    height: 201px;
+}
+
+.macNameBox {
+    margin-bottom: 30px;
+}
+
+/* RAM QISMI >>>>>>>>>>>>>>>>>>>>> */
+
+.ram {
+    
+}
+.ram__title {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+.ramBtn {
+    padding: 16px 10px;
+    border: 2px solid #888;
+    border-radius: 10px;
+    /* width: calc(100% + 16px); */
+    width: 182px;
+    margin-right: 16px;
+    background-color: #fff;
+}
+
+.activeRam {
+    border-color: #06c;
+}
+
+.ramBtn:focus {
+    border-color: #06c;
+}
+
+.ramBtnBox {
+    display: flex;
+    align-content: center;
+    padding: 8px 0;
+}
+
+/* XOTIRA >>>>>>>>>>>>>>> */
+
+.color {
+}
+.color__title {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+.colorBtnBox {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.goldBtn {
+
+}
+.color-btn {
+    width: 281px;
+    padding: 10px 12px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.yellow {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgb(210 157 0);
+}
+.gray {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: silver;
+}
+.lightGray {
+    width: 24px;
+    height: 24px;
+    background-color: grey;
+    border-radius: 50%;
+}
+
+.color-name {
+    margin-top: 5px;
+    color: #000;
+    font-size: 12px;
+    margin-bottom: 0 !important;
+
+}
+
+/* INPUT   */
+
+.addBox {
+    /* padding: 8px; */
+    margin-bottom: 16px;
+    width: 200px;
+    height: 40px;
+    border: 1px solid #888;
+    border-radius: 8px;
+}
+
+.minusBtn {
+    width: 27%;
+    background-color: #fff;
+    border: none;
+    border-right: none;
+}
+.numberInput {
+    width: 30%;
+    padding: 6px;
+    width: 80px;
+    outline: none;
+    border: 1px solid #888;
+    border-top-color: transparent;
+}
+
+
+.plusBtn {
+    width: 25%;
+    background-color: #fff;
+    border: none;
+}
+/* .plusBtn .bx {
+    font-size: 25px;
+} */
+
+
+/* Price block */
+
+.price {
+
+}
+.price-title {
+    color: #1d1d1d;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+}
+.price-text {
+    display: block;
+    font-size: 24px;
+    font-weight: 500;
+    text-decoration: line-through;
+}
+
+.add-basket-btn {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #0066cc;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.combars-btn {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    color: #0066cc;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 998px) { 
+    .container {
+        width: 100%;
+        padding: 0!important;
+    }
+
+    .parents {
+        width: 100%;
+        flex-direction: column;
+    }
+    .ramBtn {
+        width: 100%;
+    }
+
+    .color-btn {
+        width: 100%;
+    }
+
+}   
+
+@media screen and (max-width: 778px) { 
+    .macImg {
+        width: 100%;
+       object-fit: cover;
+    }
+
+
+} 
