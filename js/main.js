@@ -3,37 +3,27 @@ const macBox = [{
         nomi: `Gold`,
         imgUrl: "./imgs/macbookAir.webp",
         imgSlider: ["imgs/macbookAir.webp", "imgs/macPink2.jpg", "imgs/macPink3.jpg", "imgs/macPink4.jpg", "imgs/macPink5.jpg"],
-        ram: [{
+        ram: [
+            {
                 GB: 8,
-                xotira: [{
-                        name: `M1/8/256 Gold`,
-                        gbXotira: 256,
-                        price: 12497000
-                    },
+                name: `M1/8/256 Gold`,
+                xotira: [
                     {
-                        name: `M1/8/512 Gold`,
-                        gbXotira: 512,
-                        price: 15066000
+                        name: [`M1/8/256 Gold`, `M1/8/512 Gold`],
+                        gbXotira: [256, 512],
+                        price: [12497000, 15066000]
                     }
                 ]
             },
             {
                 GB: 16,
-                xotira: [{
-                        name: `M1/16/256 Gold`,
-                        gbXotira: 256,
-                        price: `16 935 000`
-                    },
+                name: `M1/16/256 Gold`,
+                xotira: [
                     {
-                        name: `M1/16/512 Gold`,
-                        gbXotira: 512,
-                        price: `19 270 500`
+                        name: [`M1/16/256 Gold`, `M1/16/512 Gold`, `M1/16/1TB Gold`],
+                        gbXotira: [256, 512, 1024],
+                        price: [16935000, 19270500, 22497000]
                     },
-                    {
-                        name: `M1/16/1tb Gold`,
-                        gbXotira: 1,
-                        price: `22 497 000`
-                    }
                 ]
             }
         ],
@@ -58,7 +48,7 @@ const macBox = [{
                     },
                     {
                         name: `M1/16/1tb Silver`,
-                        gbXotira: 1,
+                        gbXotira: 1024,
                         price: `22 497 000`
                     }
                 ]
@@ -77,7 +67,7 @@ const macBox = [{
                     },
                     {
                         name: `M1/16/1tb Silver`,
-                        gbXotira: 1,
+                        gbXotira: 1024,
                         price: `22 497 000`
                     }
                 ]
@@ -118,7 +108,7 @@ const macBox = [{
                     },
                     {
                         name: `M1/16/1tb Grey`,
-                        gbXotira: 1,
+                        gbXotira: 1024,
                         price: `22 497 000`
                     }
                 ]
@@ -136,60 +126,60 @@ function renderButtons() {
     let box = document.createElement('div');
     box.innerHTML = `
         <div>
-        <h1 class="mac__title">MacBook Air 13-inch</h1>
-        <div class="macNameBox">
-            <h2 class="macName">M1/8/512 Gold</h2>
-        </div>
-        <div class="ram">
-            <h4 class="ram__title">Ram</h4>
-            <div class="ramBtnBox">
-                <button id="ramOne" class="ramBtn borderActive">8GB</button>
-                <button id="ramTwo" class="ramBtn">16GB</button>
+            <h1 class="mac__title">MacBook Air 13-inch</h1>
+            <div class="macNameBox">
+                <h2 class="macName">M1/8/512 Gold</h2>
             </div>
-        </div>
-        <div class="xotira">
-            <h4 class="ram__title">Xotira hajmi</h4>
-            <div class="ramBtnBox">
-                <button id="memoryOne" class="ramBtn borderActive">256GB</button>
-                <button id="memoryTwo" class="ramBtn">512GB</button>
-                <button id="memoryThree" class="ramBtn noneBtn">1TB</button>
+            <div class="ram">
+                <h4 class="ram__title">Ram</h4>
+                <div class="ramBtnBox">
+                    <button id="ramOne" class="ramBtn borderActive">8GB</button>
+                    <button id="ramTwo" class="ramBtn">16GB</button>
+                </div>
             </div>
-        </div>
-        <div class="color">
-            <h4 class="color__title">Ranglar</h4>
-            <div class="colorBtnBox">
-                <button class="goldBtn color-btn borderActive"> 
-                    <span class="yellow"></span>
-                    <p class="color-name">Tilla rang</p>
-                </button>
-                <button class="grayBtn color-btn">
-                    <span class="gray"></span>
-                    <p class="color-name">Kumush rang</p>
-                </button>
-                <button class="lightGrayBtn color-btn">
-                    <span class="lightGray"></span>
-                    <p class="color-name"> Kosmik kulrang</p>
-                </button>
+            <div class="xotira">
+                <h4 class="ram__title">Xotira hajmi</h4>
+                <div class="ramBtnBox">
+                    <button id="memoryOne" class="ramBtn borderActive">256GB</button>
+                    <button id="memoryTwo" class="ramBtn">512GB</button>
+                    <button id="memoryThree" class="ramBtn noneBtn">1TB</button>
+                </div>
             </div>
-        </div>
-        <div class="addBox">
-            <div class="add-btn-box">
-                <button class="minusBtn">
-                    <i class='bx bx-minus'></i>
-                </button>
-                <input class="numberInput" type="number" value="1">
-                <button class="plusBtn">
-                    <i class='bx bx-plus'></i>
-                </button>
+            <div class="color">
+                <h4 class="color__title">Ranglar</h4>
+                <div class="colorBtnBox">
+                    <button class="goldBtn color-btn borderActive"> 
+                        <span class="yellow"></span>
+                        <p class="color-name">Tilla rang</p>
+                    </button>
+                    <button class="grayBtn color-btn">
+                        <span class="gray"></span>
+                        <p class="color-name">Kumush rang</p>
+                    </button>
+                    <button class="lightGrayBtn color-btn">
+                        <span class="lightGray"></span>
+                        <p class="color-name"> Kosmik kulrang</p>
+                    </button>
+                </div>
             </div>
+            <div class="addBox">
+                <div class="add-btn-box">
+                    <button class="minusBtn">
+                        <i class='bx bx-minus'></i>
+                    </button>
+                    <input class="numberInput" type="number" value="1">
+                    <button class="plusBtn">
+                        <i class='bx bx-plus'></i>
+                    </button>
+                </div>
+            </div>
+            <div class="price">
+                <h3 class="price-title">15 066 000 so'm</h3>
+                <p class="price-text">17 627 500 so'm</p>
+            </div>
+            <button class="add-basket-btn">Savatchaga qo'shish</button>
+            <button class="combars-btn">Taqqoslash</button>
         </div>
-        <div class="price">
-            <h3 class="price-title">15 066 000 so'm</h3>
-            <p class="price-text">17 627 500 so'm</p>
-        </div>
-        <button class="add-basket-btn">Savatchaga qo'shish</button>
-        <button class="combars-btn">Taqqoslash</button>
-    </div>
         `
     rightBox.appendChild(box);
 }
@@ -238,6 +228,21 @@ function renderImg() {
 
 renderImg()
 
+const ramBtnBox = document.querySelector('.ramBtnBox');
+
+function ramRender() {
+    macBox[0].ram.forEach(item => {
+        if(item.GB == 32) {
+            let button = document.createElement('button');
+            button.className = "ramBtn"
+            button.innerHTML = `${item.GB} GB`
+            ramBtnBox.appendChild(button);
+        }
+    })
+}
+
+ramRender()
+
 
 // >>>>>>>>>>>>>>>> RAM BTN <<<<<<<<<<<<<<<<<<<
 
@@ -246,6 +251,12 @@ const ramTwoBtn = document.querySelector('#ramTwo');
 const macTitle = document.querySelector('.macName');
 const priceTitle = document.querySelector('.price-title');
 
+// >>>>>>>>>>>>>>>> MEMORY (XOTIRA) BTN <<<<<<<<<<<<<<<<<<<
+
+const memoryOne = document.querySelector('#memoryOne');
+const memoryTwo = document.querySelector('#memoryTwo');
+const memoryThree = document.querySelector('#memoryThree');
+
 ramOneBtn.addEventListener('click', renderOne);
 ramTwoBtn.addEventListener('click', renderTwo);
 
@@ -253,14 +264,73 @@ function renderOne() {
     ramOneBtn.style.borderColor = "blue";
     ramTwoBtn.style.borderColor = "#888";
     memoryThree.style.display = "none";
-    macTitle.innerHTML = `M1/8/256 Silver`
+    macTitle.innerHTML = macBox[0].ram[0].name;
+
+    macBox[0].ram[0].xotira.forEach((item) =>{
+        memoryOne.addEventListener('click', () => {
+            memoryOne.classList.add('borderActive');
+            memoryTwo.classList.remove('borderActive');
+            memoryThree.classList.remove('borderActive');
+            macTitle.innerHTML = item.name[0];
+            priceTitle.innerHTML = `${item.price[0]} so'm`
+
+        })
+        memoryTwo.addEventListener('click', () => {
+            memoryTwo.classList.add('borderActive');
+            memoryOne.classList.remove('borderActive');
+            memoryThree.classList.remove('borderActive');
+            macTitle.innerHTML = item.name[1];
+            priceTitle.innerHTML = `${item.price[1]} so'm`
+        })
+    })
+
 }
 
 function renderTwo() {
     ramTwoBtn.style.borderColor = "blue";
     ramOneBtn.style.borderColor = "#888";
     memoryThree.style.display = "block";
-    macTitle.innerHTML = `M1/16/256 Silver`
+    macTitle.innerHTML = macBox[0].ram[1].name;
+
+    macBox[0].ram[1].xotira.forEach((item) =>{
+        memoryOne.addEventListener('click', () => {
+            memoryOne.classList.add('borderActive');
+            memoryTwo.classList.remove('borderActive');
+            memoryThree.classList.remove('borderActive');
+            macTitle.innerHTML = item.name[0];
+            priceTitle.innerHTML = `${item.price[0]} so'm`
+
+        })
+        memoryTwo.addEventListener('click', () => {
+            memoryTwo.classList.add('borderActive');
+            memoryOne.classList.remove('borderActive');
+            memoryThree.classList.remove('borderActive');
+            macTitle.innerHTML = item.name[1];
+            priceTitle.innerHTML = `${item.price[1]} so'm`
+        })
+        memoryThree.addEventListener('click', () => {
+            memoryThree.classList.add('borderActive');
+            memoryOne.classList.remove('borderActive');
+            memoryTwo.classList.remove('borderActive');
+            macTitle.innerHTML = item.name[2];
+            priceTitle.innerHTML = `${item.price[2]} so'm`
+        })
+
+    })
+
+
+    // macBox[0].ram.forEach((item) =>{
+    //     if(item.xotira[0].gbXotira == 256) {
+    //         macTitle.innerHTML = item.xotira[0].name;
+    //         priceTitle.innerHTML = item.xotira[0].price
+
+    //     } else if(item.xotira[0].gbXotira == 512) {
+    //         macTitle.innerHTML = item.xotira[0].name
+    //         priceTitle.innerHTML = item.xotira[0].price
+    //     }
+    //     // console.log();
+    // })
+
 }
 
 // macBox.forEach((item) => {
@@ -271,27 +341,6 @@ function renderTwo() {
 // })
 
 
-// >>>>>>>>>>>>>>>> MEMORY (XOTIRA) BTN <<<<<<<<<<<<<<<<<<<
-
-const memoryOne = document.querySelector('#memoryOne');
-const memoryTwo = document.querySelector('#memoryTwo');
-const memoryThree = document.querySelector('#memoryThree');
-
-memoryOne.addEventListener('click', () => {
-    memoryOne.classList.add('borderActive');
-    memoryTwo.classList.remove('borderActive');
-    memoryThree.classList.remove('borderActive');
-})
-memoryTwo.addEventListener('click', () => {
-    memoryTwo.classList.add('borderActive');
-    memoryOne.classList.remove('borderActive');
-    memoryThree.classList.remove('borderActive');
-})
-memoryThree.addEventListener('click', () => {
-    memoryThree.classList.add('borderActive');
-    memoryOne.classList.remove('borderActive');
-    memoryTwo.classList.remove('borderActive');
-})
 
 // >>>>>>>>>>>> COLOR & IMG <<<<<<<<<<<<<<<
 
@@ -342,4 +391,4 @@ const minusBtn = document.querySelector('.minusBtn');
 const plusBtn = document.querySelector('.plusBtn');
 const numberInput = document.querySelector('.numberInput');
 
-console.log(numberInput.value);
+// console.log(numberInput.value);
