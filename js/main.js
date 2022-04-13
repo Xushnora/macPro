@@ -318,27 +318,7 @@ function renderTwo() {
 
     })
 
-
-    // macBox[0].ram.forEach((item) =>{
-    //     if(item.xotira[0].gbXotira == 256) {
-    //         macTitle.innerHTML = item.xotira[0].name;
-    //         priceTitle.innerHTML = item.xotira[0].price
-
-    //     } else if(item.xotira[0].gbXotira == 512) {
-    //         macTitle.innerHTML = item.xotira[0].name
-    //         priceTitle.innerHTML = item.xotira[0].price
-    //     }
-    //     // console.log();
-    // })
-
 }
-
-// macBox.forEach((item) => {
-//     item.ram.forEach((element) => {
-//         console.log(element);
-//     })
-
-// })
 
 
 
@@ -381,7 +361,6 @@ function greyColor() {
     greyBtn.style.borderColor = "blue";
 
     macsBox.innerHTML = `<img class="macImg" src="${macBox[2].imgUrl}" alt="mac">`
-
 }
 
 

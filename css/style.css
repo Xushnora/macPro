@@ -63,15 +63,38 @@ body {
     background-color: #fff;
 }
 
+.memoryBtn {
+    padding: 16px 10px;
+    border: 3px solid #888;
+    border-radius: 10px;
+    /* width: calc(100% + 16px); */
+    width: 182px;
+    margin-right: 16px;
+    background-color: #fff;
+}
+
+
 .activeRam {
     border-color: #06c;
 }
 
-.ramBtn:focus {
+/* .ramBtn:focus {
     border-color: #06c;
-}
+} */
 
 .ramBtnBox {
+    display: flex;
+    align-content: center;
+    padding: 8px 0;
+}
+
+.listBtn {
+    display: flex;
+    align-content: center;
+    padding: 8px 0;
+}
+
+.listMemory {
     display: flex;
     align-content: center;
     padding: 8px 0;
@@ -236,15 +259,18 @@ body {
 }
 
 .slider-item {
+    border: 3px solid transparent;
     width: 100px;
     height: 100px;
     margin-right: 8px;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .active-item {
     border: 3px solid #0c0c0c;
     border-radius: 8px;
+    transition: all 0.2s ease;
 }
 
 .slider-item:hover {
@@ -292,6 +318,11 @@ body {
 
 
 .borderActive {
+    border: 3px solid blue;
+    border-radius: 10px;
+}
+
+.active-btn {
     border: 3px solid blue;
     border-radius: 10px;
 }
