@@ -26,12 +26,6 @@ body {
     justify-content: center;
 }
 
-.macBox {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    margin-bottom: 30px;
-}
 
 .macImg {
     width: 370px;
@@ -249,6 +243,36 @@ body {
 
 
 /* slider >>>>>>>>>>>>>>>>>. */
+
+/* big slider */
+
+.macBox {
+    display: flex;
+    align-content: center;
+    margin-bottom: 10px;
+    overflow-x: hidden;
+    /* border: 2px solid red; */
+}
+
+.macImgList {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    transform: translateX(-400px);
+}
+
+.macImgItem {
+    border: 1px solid blue;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+/* little slider */
 
 .slider-list {
     list-style: none;

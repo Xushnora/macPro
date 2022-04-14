@@ -49,21 +49,63 @@ const macObj = {
   colors: [
     {
       name: "Gold",
-      imgUrl: "./imgs/macbookAir.webp",
+      color: '.yellow',
+      imgUrl: "imgs/macbookAir.webp",
       imgSlider: ["imgs/macbookAir.webp", "imgs/macPink2.jpg", "imgs/macPink3.jpg", "imgs/macPink4.jpg", "imgs/macPink5.jpg"]
     },
     {
       name: "Silver",
+      color: '.gray',
       imgUrl: "imgs/macSilver1.jpg",
       imgSlider: ["imgs/macSilver1.jpg", "imgs/macSilver2.jpg", "imgs/macSilver3.jpg", "imgs/macSilver4.jpg", "imgs/macSilver5.jpg"]
     },
     {
       name: "Space Gray",
+      color: '.lightGray ',
       imgUrl:  "imgs/macGrey1.jpg",
       imgSlider: ["imgs/macGrey1.jpg", "imgs/macGrey2.jpg", "imgs/macGrey3.jpg", "imgs/macGrey4.jpg", "imgs/macGrey5.jpg"],
     },
   ],
+  gold: [
+    "imgs/macbookAir.webp",
+    "imgs/macPink2.jpg", 
+    "imgs/macPink3.jpg",
+    "imgs/macPink4.jpg",
+    "imgs/macPink5.jpg"
+  ],
+  silver: [
+    "imgs/macSilver1.jpg", 
+    "imgs/macSilver2.jpg", 
+    "imgs/macSilver3.jpg", 
+    "imgs/macSilver4.jpg", 
+    "imgs/macSilver5.jpg"
+  ],
+  grey: [
+    "imgs/macGrey1.jpg",
+    "imgs/macGrey2.jpg", 
+    "imgs/macGrey3.jpg", 
+    "imgs/macGrey4.jpg", 
+    "imgs/macGrey5.jpg"
+  ]
 };
+
+const typeObj = [
+  { 
+    active: true,
+    name: "Gold",
+    imgSlider: ["imgs/macbookAir.webp", "imgs/macPink2.jpg", "imgs/macPink3.jpg", "imgs/macPink4.jpg", "imgs/macPink5.jpg"]
+  },
+  {
+    active: false,
+    name: "Silver",
+    imgSlider: ["imgs/macGrey1.jpg", "imgs/macGrey2.jpg", "imgs/macGrey3.jpg", "imgs/macGrey4.jpg", "imgs/macGrey5.jpg"],
+  },
+  {
+    active: false,
+    name: "Space Gray",
+    imgSlider: ["imgs/macGrey1.jpg", "imgs/macGrey2.jpg", "imgs/macGrey3.jpg", "imgs/macGrey4.jpg", "imgs/macGrey5.jpg"],
+  }
+]
 
 const listBtn = document.querySelector('.listBtn');
 const listMemory = document.querySelector('.listMemory');
@@ -76,6 +118,7 @@ const numberInput = document.querySelector('.numberInput');
 price.innerHTML = 0;
 let total = 1;
 let count = 0;
+numberInput.value = 1
 
 function priceNew(macObj) {
   add.addEventListener('click', ()=> {
@@ -88,7 +131,7 @@ function priceNew(macObj) {
               return
             } else {
               total = element.price*count;
-              price.innerHTML = total;
+              price.innerHTML = `${total} so'm`;
               numberInput.value = count;
             }
           }
@@ -119,6 +162,7 @@ function priceNew(macObj) {
 }
 priceNew(macObj);
 
+
 // >>>>>>>>>>>>>> RAM CREATE <<<<<<<<<<<<<<<<
 
 function addBtnRam(macObj) {
@@ -145,7 +189,6 @@ function addBtnRam(macObj) {
     listBtn.appendChild(btn);
   });
 }
-
 addBtnRam(macObj);
 
 let addName = 0;
@@ -160,7 +203,7 @@ listBtn.addEventListener("click", (e) => {
       element.active = true;
       element.memory.forEach(item =>{
         // console.log(item.price);
-        price.innerHTML = item.price;
+        price.innerHTML = `${item.price} so'm`;
       })
     }
   });
@@ -180,7 +223,7 @@ function isAcitve(macObj) {
         memoryNameAdd = e.target.innerHTML.slice(0, e.target.innerHTML.length - 2);
         if (el.size == memoryNameAdd) {
           macName.innerHTML = `M1/${addName}/${memoryNameAdd}/Gold`
-          price.innerHTML = el.price;
+          price.innerHTML = `${el.price} so'm`;
           el.active = true;
         }
       });
@@ -192,9 +235,159 @@ function isAcitve(macObj) {
 
 isAcitve(macObj);
 
+let sliderList = document.querySelector('.slider-list');
+let macImgList = document.querySelector('.macImgList');
+// let macImgItem = document.querySelectorAll('.macImgItem');
+
+function biggerGold(macObj) {
+  macObj.gold.forEach(item => {
+    let li = document.createElement('li');
+    li.className = 'macImgItem';
+    li.innerHTML = `
+    <img class="macImg" src="${item}" alt="mac">
+    `
+    macImgList.appendChild(li);
+  })
+}
+biggerGold(macObj)
+
+function biggerSilver(macObj) {
+  macObj.silver.forEach(item => {
+    let li = document.createElement('li');
+    li.className = 'macImgItem';
+    li.innerHTML = `
+    <img class="macImg" src="${item}" alt="mac">
+    `
+    macImgList.appendChild(li);
+  })
+}
+// biggerSilver(macObj);
+
+function biggerGrey(macObj) {
+  macObj.grey.forEach(item => {
+    let li = document.createElement('li');
+    li.className = 'macImgItem';
+    li.innerHTML = `
+    <img class="macImg" src="${item}" alt="mac">
+    `
+    macImgList.appendChild(li);
+  })
+}
+// biggerGrey(macObj);
+
+function goldList(macObj) {
+  macObj.gold.forEach(item => {
+    let li = document.createElement('li');
+    li.className = 'slider-item';
+    li.innerHTML = `
+    <img src="${item}" alt="mac">
+    `
+    sliderList.appendChild(li);
+  })
+}
+goldList(macObj)
+function silverList(macObj) {
+  macObj.silver.forEach(item => {
+    let li = document.createElement('li');
+    li.className = 'slider-item';
+    li.innerHTML = `
+    <img src="${item}" alt="mac">
+    `
+    sliderList.appendChild(li);
+  })
+}
+// silverList(macObj);
+function greyList(macObj) {
+  macObj.grey.forEach(item => {
+    let li = document.createElement('li');
+    li.className = 'slider-item';
+    li.innerHTML = `
+    <img src="${item}" alt="mac">
+    `
+    sliderList.appendChild(li);
+  })
+}
+// greyList(macObj);
+console.log(macObj.gold[0]);
 
 
 
+
+// slider uchun BUTTON COLORS
+
+const colorBtnBox = document.querySelector('.colorBtnBox');
+let colorBtn = document.querySelectorAll('.color-btn');
+let macBox = document.querySelector('.macBox');
+
+colorBtn[0].addEventListener('click', (e)=> {
+  sliderList.innerHTML = "";
+  macImgList.innerHTML = "";
+  colorBtn[0].classList.add('borderActive');
+  colorBtn[1].classList.remove('borderActive');
+  colorBtn[2].classList.remove('borderActive');
+  
+  biggerGold(macObj);
+  goldList(macObj)
+})
+
+
+colorBtn[1].addEventListener('click', (e)=> {
+  sliderList.innerHTML = "";
+  macImgList.innerHTML = "";
+  colorBtn[1].classList.add('borderActive');
+  colorBtn[0].classList.remove('borderActive');
+  colorBtn[2].classList.remove('borderActive');
+
+  biggerSilver(macObj);
+  silverList(macObj);
+
+})
+
+
+colorBtn[2].addEventListener('click', (e)=> {
+  sliderList.innerHTML = "";
+  macImgList.innerHTML = "";
+  colorBtn[2].classList.add('borderActive');
+  colorBtn[0].classList.remove('borderActive');
+  colorBtn[1].classList.remove('borderActive');
+
+  greyList(macObj);
+  biggerGrey(macObj);
+
+})
+
+
+// console.log(sliderItems.length);
+
+// let temp = 500;
+// let count2 = 0;
+// sliderItems.forEach((_, index) => {
+//   sliderItems[index].addEventListener('click', ()=>{
+//     count2++;
+//     if(count2 == index) {
+//       macImgList.style.transform = `translateX(${temp}px)`;
+//       console.log('ok');
+//     } else {
+//       macImgList.style.transform = `translateX(-${temp}px)`;
+//       console.log('no');
+//     }
+//   })
+// })
+
+function carousel() {
+  let sliderItems = document.querySelectorAll('.slider-item');
+  sliderItems.forEach((item, index) => {
+    item.addEventListener('click', ()=> {
+      sliderItems.forEach((value) => {
+        value.classList.remove('active-item');
+      })
+      item.classList.add('active-item');
+      macImgList.style.transform = `
+      translateX(${-index *500}px)`
+    })
+  })
+}
+carousel()
 
 
 
